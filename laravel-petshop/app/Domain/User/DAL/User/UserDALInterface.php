@@ -9,10 +9,10 @@ use App\DomainUtils\BaseDAL\BaseDALInterface;
 interface UserDALInterface extends BaseDALInterface
 {
     /**
-     * Find User for login
+     * Find User by uuid
      *
-     * @param LoginRequest $request
+     * @param string $uuid
      * @return User|null
      */
-    public function findUserByEmailPassword(LoginRequest $request): User|null;
+    public function findUserByUuid(string $uuid): User|null;
 }

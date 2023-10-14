@@ -2,10 +2,8 @@
 
 namespace App\Domain\User\DAL\User;
 
-use App\Domain\User\Requests\LoginRequest;
-use App\DomainUtils\BaseDAL\BaseDAL;
 use App\Domain\User\Models\User;
-use Illuminate\Support\Facades\Hash;
+use App\DomainUtils\BaseDAL\BaseDAL;
 
 /**
  * @property User model
@@ -17,18 +15,14 @@ class UserDAL extends BaseDAL implements UserDALInterface
         $this->model = $user;
     }
 
-
     /**
-     * Find User for login
+     * Find User by uuid
      *
-     * @param LoginRequest $request
+     * @param string $uuid
      * @return User|null
      */
-    public function findUserByEmailPassword(LoginRequest $request): User|null
+    public function findUserByUuid(string $uuid): User|null
     {
-        dd(Hash::make($request->input('password')));
-        return $this->model->where('email', $request->input('email'))
-                ->where('password', Hash::make($request->input('password')))
-                ->first();
+        return $this->model->where('uuid', $uuid)->first();
     }
 }

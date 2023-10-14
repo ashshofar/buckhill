@@ -18,5 +18,12 @@ use Illuminate\Support\Facades\Route;
 Route::prefix('v1')->group(function () {
     Route::prefix('admin')->group(function () {
         Route::post('/login', AdminLoginController::class);
+
+    });
+});
+
+Route::group(['middleware' => ['jwt.verify']], function () {
+    Route::get('/test', function () {
+        return 'test';
     });
 });
