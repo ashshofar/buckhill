@@ -61,6 +61,8 @@ class UserController extends Controller
             )
         );
 
-        return response()->json($result);
+        dd($token->claims()->get('uid'));
+
+        return response()->json($token);
     }
 }

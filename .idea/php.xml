@@ -114,6 +114,30 @@
       <path value="$PROJECT_DIR$/laravel-petshop/vendor/guzzlehttp/uri-template" />
       <path value="$PROJECT_DIR$/laravel-petshop/vendor/nunomaduro/collision" />
       <path value="$PROJECT_DIR$/laravel-petshop/vendor/composer" />
+      <path value="$PROJECT_DIR$/laravel-petshop/vendor/league/container" />
+      <path value="$PROJECT_DIR$/laravel-petshop/vendor/phpstan/phpstan" />
+      <path value="$PROJECT_DIR$/laravel-petshop/vendor/phpstan/phpdoc-parser" />
+      <path value="$PROJECT_DIR$/laravel-petshop/vendor/psr/cache" />
+      <path value="$PROJECT_DIR$/laravel-petshop/vendor/friendsofphp/php-cs-fixer" />
+      <path value="$PROJECT_DIR$/laravel-petshop/vendor/slevomat/coding-standard" />
+      <path value="$PROJECT_DIR$/laravel-petshop/vendor/dealerdirect/phpcodesniffer-composer-installer" />
+      <path value="$PROJECT_DIR$/laravel-petshop/vendor/php-parallel-lint/php-parallel-lint" />
+      <path value="$PROJECT_DIR$/laravel-petshop/vendor/phpmyadmin/sql-parser" />
+      <path value="$PROJECT_DIR$/laravel-petshop/vendor/lcobucci/jwt" />
+      <path value="$PROJECT_DIR$/laravel-petshop/vendor/nunomaduro/larastan" />
+      <path value="$PROJECT_DIR$/laravel-petshop/vendor/nunomaduro/phpinsights" />
+      <path value="$PROJECT_DIR$/laravel-petshop/vendor/justinrainbow/json-schema" />
+      <path value="$PROJECT_DIR$/laravel-petshop/vendor/symfony/polyfill-php81" />
+      <path value="$PROJECT_DIR$/laravel-petshop/vendor/symfony/http-client-contracts" />
+      <path value="$PROJECT_DIR$/laravel-petshop/vendor/cmgmyr/phploc" />
+      <path value="$PROJECT_DIR$/laravel-petshop/vendor/symfony/filesystem" />
+      <path value="$PROJECT_DIR$/laravel-petshop/vendor/symfony/options-resolver" />
+      <path value="$PROJECT_DIR$/laravel-petshop/vendor/symfony/cache" />
+      <path value="$PROJECT_DIR$/laravel-petshop/vendor/symfony/cache-contracts" />
+      <path value="$PROJECT_DIR$/laravel-petshop/vendor/symfony/var-exporter" />
+      <path value="$PROJECT_DIR$/laravel-petshop/vendor/symfony/stopwatch" />
+      <path value="$PROJECT_DIR$/laravel-petshop/vendor/symfony/http-client" />
+      <path value="$PROJECT_DIR$/laravel-petshop/vendor/lcobucci/clock" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="8.1" />

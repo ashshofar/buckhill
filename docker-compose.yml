@@ -14,7 +14,7 @@ services:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: petshop
     ports:
-      - 3306:3306
+      - 3308:3308
 
   phpmyadmin:
     image: phpmyadmin:latest
