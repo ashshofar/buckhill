@@ -3,12 +3,15 @@
 namespace App\Domain\User\Models;
 
 use App\Domain\Order\Models\Order;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Support\Str;
 
 class User extends Model
 {
+    use HasFactory;
+
     protected $fillable = [
         //
     ];
