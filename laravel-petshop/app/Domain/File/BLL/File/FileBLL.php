@@ -31,11 +31,11 @@ class FileBLL extends BaseBLL implements FileBLLInterface
         $file = $request->file('file');
         $name = $file->hashName();
 
-        Storage::put("public/pet-shop", $file);
+        Storage::put("public/".File::PATH_IMAGE, $file);
 
         return $this->DAL->query()->create([
             'name' => "{$name}",
-            'path' => "public/pet-shop",
+            'path' => File::PATH_IMAGE,
             'size' => $file->getSize(),
             'type' => $file->getClientMimeType()
         ]);

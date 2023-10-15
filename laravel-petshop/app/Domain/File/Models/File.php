@@ -2,12 +2,17 @@
 
 namespace App\Domain\File\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
 class File extends Model
 {
+    use HasFactory;
+
+    const PATH_IMAGE = 'pet-shop';
+
     protected $fillable = [
         'name',
         'path',
