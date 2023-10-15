@@ -16,7 +16,9 @@ class DatabaseSeeder extends Seeder
             AdminTableSeeder::class,
             CategoryTableSeeder::class,
             BrandTableSeeder::class,
-            FileTableSeeder::class
+            FileTableSeeder::class,
+
+            OrderStatusTableSeeder::class
         ]);
     }
 }
