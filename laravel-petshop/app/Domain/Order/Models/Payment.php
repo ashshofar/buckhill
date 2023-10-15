@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Support\Str;
 
-class OrderStatus extends Model
+class Payment extends Model
 {
     protected $fillable = [
         'title'
@@ -16,13 +16,13 @@ class OrderStatus extends Model
     {
         parent::boot();
 
-        static::creating(function ($orderStatus) {
-            $orderStatus->uuid = (string) Str::uuid();
+        static::creating(function ($payment) {
+            $payment->uuid = (string) Str::uuid();
         });
     }
 
     /**
-     * Orders relations
+     * Order relations
      *
      * @return HasMany
      */
