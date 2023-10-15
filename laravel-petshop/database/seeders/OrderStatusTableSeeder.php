@@ -20,5 +20,6 @@ class OrderStatusTableSeeder extends Seeder
         OrderStatus::create(['title' => 'shipped']);
         OrderStatus::create(['title' => 'paid']);
         OrderStatus::create(['title' => 'pending payment']);
+        OrderStatus::create(['title' => 'open']);
     }
 }
