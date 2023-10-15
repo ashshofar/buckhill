@@ -2,10 +2,12 @@
 
 namespace App\Domain\User\BLL\Auth;
 
+use App\Domain\User\Models\User;
 use App\Domain\User\Requests\LoginRequest;
 use App\DomainUtils\BaseBLL\BaseBLL;
 use App\DomainUtils\BaseBLL\BaseBLLFileUtils;
 use App\Domain\User\DAL\User\UserDALInterface;
+use Illuminate\Contracts\Auth\Authenticatable;
 use Illuminate\Support\Facades\Auth;
 use Lcobucci\JWT\Configuration;
 use Lcobucci\JWT\Encoding\ChainedFormatter;
@@ -39,21 +41,25 @@ class AuthBLL extends BaseBLL implements AuthBLLInterface
      * Login admin
      *
      * @param LoginRequest $request
-     * @return string
+     * @return Authenticatable|bool
      */
-    public function authenticateAdmin(LoginRequest $request): string
+    public function authenticateAdmin(LoginRequest $request): Authenticatable|bool
     {
-        return Auth::once($request->only('email', 'password'));
+        if (!Auth::once($request->only('email', 'password'))) {
+            return false;
+        }
+
+        return Auth::user();
     }
 
     /**
      * Create JWT token
      *
+     * @param User $user
      * @return string
      */
-    public function createToken(): string
+    public function createToken(User $user): string
     {
-        $user = Auth::getUser();
         $tokenBuilder = (new Builder(new JoseEncoder(), ChainedFormatter::default()));
 
         $token = $tokenBuilder->issuedBy(config('app.url'))

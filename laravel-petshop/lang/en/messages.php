@@ -14,5 +14,8 @@ return [
     */
 
     'not_found' => 'Data not found',
-    'file_uploaded' => 'File Uploaded'
+    'file_uploaded' => 'File uploaded',
+    'admin_created' => 'Admin created',
+    'user_created' => 'User created',
+    'login_success' => 'Login success'
 ];

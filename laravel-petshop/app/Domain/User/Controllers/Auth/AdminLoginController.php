@@ -24,7 +24,7 @@ class AdminLoginController extends Controller
      */
     public function __invoke(LoginRequest $request): ApiSuccessResponse|ApiErrorResponse
     {
-        if (!$this->authBLL->authenticateAdmin($request)) {
+        if (!$user = $this->authBLL->authenticateAdmin($request)) {
             return new ApiErrorResponse(
                 trans('auth.failed'),
                 Response::HTTP_UNPROCESSABLE_ENTITY,
@@ -33,8 +33,8 @@ class AdminLoginController extends Controller
         }
 
         return new ApiSuccessResponse(
-            ['token' => $this->authBLL->createToken()],
-            'success'
+            ['token' => $this->authBLL->createToken($user)],
+            trans('messages.login_success')
         );
     }
 }

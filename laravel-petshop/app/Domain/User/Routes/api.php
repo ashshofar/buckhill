@@ -1,7 +1,8 @@
 <?php
 
+use App\Domain\User\Controllers\Admin\AdminCreateController;
 use App\Domain\User\Controllers\Auth\AdminLoginController;
-use Illuminate\Http\Request;
+use App\Domain\User\Controllers\User\UserCreateController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,7 +19,11 @@ use Illuminate\Support\Facades\Route;
 Route::prefix('v1')->group(function () {
     Route::prefix('admin')->group(function () {
         Route::post('/login', AdminLoginController::class);
+        Route::post('/create', AdminCreateController::class);
+    });
 
+    Route::prefix('user')->group(function () {
+        Route::post('/create', UserCreateController::class);
     });
 });
 
