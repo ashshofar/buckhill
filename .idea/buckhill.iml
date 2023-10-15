@@ -138,6 +138,7 @@
       <excludeFolder url="file://$MODULE_DIR$/laravel-petshop/vendor/symfony/stopwatch" />
       <excludeFolder url="file://$MODULE_DIR$/laravel-petshop/vendor/symfony/http-client" />
       <excludeFolder url="file://$MODULE_DIR$/laravel-petshop/vendor/lcobucci/clock" />
+      <excludeFolder url="file://$MODULE_DIR$/laravel-petshop/vendor/spatie/laravel-sluggable" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

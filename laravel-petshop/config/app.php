@@ -198,8 +198,9 @@ return [
         /**
          * Domain Service Providers
          */
+        App\Domain\File\Providers\FileProvider::class,
         App\Domain\User\Providers\UserProvider::class,
-        App\Domain\Product\Providers\ProductProvider::class
+        App\Domain\Product\Providers\ProductProvider::class,
     ],
 
     /*

@@ -138,6 +138,7 @@
       <path value="$PROJECT_DIR$/laravel-petshop/vendor/symfony/stopwatch" />
       <path value="$PROJECT_DIR$/laravel-petshop/vendor/symfony/http-client" />
       <path value="$PROJECT_DIR$/laravel-petshop/vendor/lcobucci/clock" />
+      <path value="$PROJECT_DIR$/laravel-petshop/vendor/spatie/laravel-sluggable" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="8.1" />
