@@ -12,7 +12,9 @@
         "laravel/tinker": "^2.8",
         "lcobucci/clock": "^3.0",
         "lcobucci/jwt": "*",
-        "spatie/laravel-sluggable": "^3.5"
+        "spatie/laravel-data": "^3.9",
+        "spatie/laravel-sluggable": "^3.5",
+        "symfony/serializer": "^6.3"
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",

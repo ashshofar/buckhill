@@ -2,6 +2,10 @@
 
 namespace App\Domain\Order\Providers;
 
+use App\Domain\Order\BLL\Payment\PaymentBLL;
+use App\Domain\Order\BLL\Payment\PaymentBLLInterface;
+use App\Domain\Order\DAL\Payment\PaymentDAL;
+use App\Domain\Order\DAL\Payment\PaymentDALInterface;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
@@ -25,6 +29,8 @@ class OrderProvider extends ServiceProvider
     public $bindings = [
         OrderBLLInterface::class => OrderBLL::class,
         OrderDALInterface::class => OrderDAL::class,
+        PaymentBLLInterface::class => PaymentBLL::class,
+        PaymentDALInterface::class => PaymentDAL::class
     ];
 
     /** The policy mappings for the domain.
