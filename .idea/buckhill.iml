@@ -139,6 +139,12 @@
       <excludeFolder url="file://$MODULE_DIR$/laravel-petshop/vendor/symfony/http-client" />
       <excludeFolder url="file://$MODULE_DIR$/laravel-petshop/vendor/lcobucci/clock" />
       <excludeFolder url="file://$MODULE_DIR$/laravel-petshop/vendor/spatie/laravel-sluggable" />
+      <excludeFolder url="file://$MODULE_DIR$/laravel-petshop/vendor/symfony/serializer" />
+      <excludeFolder url="file://$MODULE_DIR$/laravel-petshop/vendor/doctrine/deprecations" />
+      <excludeFolder url="file://$MODULE_DIR$/laravel-petshop/vendor/phpdocumentor/reflection-common" />
+      <excludeFolder url="file://$MODULE_DIR$/laravel-petshop/vendor/phpdocumentor/type-resolver" />
+      <excludeFolder url="file://$MODULE_DIR$/laravel-petshop/vendor/spatie/laravel-package-tools" />
+      <excludeFolder url="file://$MODULE_DIR$/laravel-petshop/vendor/spatie/laravel-data" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
