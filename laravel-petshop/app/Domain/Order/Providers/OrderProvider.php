@@ -2,20 +2,22 @@
 
 namespace App\Domain\Order\Providers;
 
+use App\Domain\Order\BLL\Order\OrderBLL;
+use App\Domain\Order\BLL\Order\OrderBLLInterface;
 use App\Domain\Order\BLL\Payment\PaymentBLL;
 use App\Domain\Order\BLL\Payment\PaymentBLLInterface;
+use App\Domain\Order\DAL\Order\OrderDAL;
+use App\Domain\Order\DAL\Order\OrderDALInterface;
+use App\Domain\Order\DAL\OrderStatus\OrderStatusDAL;
+use App\Domain\Order\DAL\OrderStatus\OrderStatusDALInterface;
 use App\Domain\Order\DAL\Payment\PaymentDAL;
 use App\Domain\Order\DAL\Payment\PaymentDALInterface;
+use App\Domain\Order\Models\Order;
+use App\Domain\Order\Policies\OrderPolicy;
+use Illuminate\Support\Facades\Event;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
-use Illuminate\Support\Facades\Event;
-use App\Domain\Order\BLL\Order\OrderBLL;
-use App\Domain\Order\BLL\Order\OrderBLLInterface;
-use App\Domain\Order\DAL\Order\OrderDAL;
-use App\Domain\Order\DAL\Order\OrderDALInterface;
-use App\Domain\Order\Policies\OrderPolicy;
-use App\Domain\Order\Models\Order;
 
 class OrderProvider extends ServiceProvider
 {
@@ -29,6 +31,7 @@ class OrderProvider extends ServiceProvider
     public $bindings = [
         OrderBLLInterface::class => OrderBLL::class,
         OrderDALInterface::class => OrderDAL::class,
+        OrderStatusDALInterface::class => OrderStatusDAL::class,
         PaymentBLLInterface::class => PaymentBLL::class,
         PaymentDALInterface::class => PaymentDAL::class
     ];

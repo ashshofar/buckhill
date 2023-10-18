@@ -14,4 +14,15 @@ class ProductDAL extends BaseDAL implements ProductDALInterface
     {
         $this->model = $product;
     }
+
+    /**
+     * Find product by uuid
+     *
+     * @param string $uuid
+     * @return Product|null
+     */
+    public function findProductByUuid(string $uuid): Product|null
+    {
+        return $this->model->where('uuid', $uuid)->first();
+    }
 }

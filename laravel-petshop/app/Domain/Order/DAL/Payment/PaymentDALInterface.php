@@ -15,4 +15,12 @@ interface PaymentDALInterface extends BaseDALInterface
      * @return Payment
      */
     public function createPayment(PaymentDTO $paymentDTO): Payment;
+
+    /**
+     * Find payment by Uuid
+     *
+     * @param string $uuid
+     * @return Payment
+     */
+    public function findPaymentByUuid(string $uuid): Payment;
 }

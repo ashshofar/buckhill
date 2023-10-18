@@ -30,4 +30,16 @@ class PaymentDAL extends BaseDAL implements PaymentDALInterface
         $payment->save();
         return $payment;
     }
+
+
+    /**
+     * Find payment by Uuid
+     *
+     * @param string $uuid
+     * @return Payment
+     */
+    public function findPaymentByUuid(string $uuid): Payment
+    {
+        return $this->model->where('uuid', $uuid)->firstOrFail();
+    }
 }

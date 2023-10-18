@@ -23,6 +23,6 @@ class UserDAL extends BaseDAL implements UserDALInterface
      */
     public function findUserByUuid(string $uuid): User|null
     {
-        return $this->model->where('uuid', $uuid)->first();
+        return $this->model->where('uuid', $uuid)->firstOrFail();
     }
 }
