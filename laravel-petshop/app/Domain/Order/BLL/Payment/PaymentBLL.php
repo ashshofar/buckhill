@@ -3,7 +3,7 @@
 namespace App\Domain\Order\BLL\Payment;
 
 use App\Domain\Order\DAL\Payment\PaymentDALInterface;
-use App\Domain\Order\DTO\PaymentDTO;
+use App\Domain\Order\DTO\Payment\PaymentDTO;
 use App\Domain\Order\Models\Payment;
 use App\DomainUtils\BaseBLL\BaseBLL;
 use App\DomainUtils\BaseBLL\BaseBLLFileUtils;

@@ -3,7 +3,7 @@
 namespace App\Domain\Order\Controllers\Payment;
 
 use App\Domain\Order\BLL\Payment\PaymentBLLInterface;
-use App\Domain\Order\DTO\PaymentDTO;
+use App\Domain\Order\DTO\Payment\PaymentDTO;
 use App\Domain\Order\Requests\PaymentCreateRequest;
 use App\Http\Controllers\Controller;
 use App\Http\Responses\ApiSuccessResponse;

@@ -2,7 +2,7 @@
 
 namespace App\Domain\Order\DAL\Payment;
 
-use App\Domain\Order\DTO\PaymentDTO;
+use App\Domain\Order\DTO\Payment\PaymentDTO;
 use App\Domain\Order\Models\Payment;
 use App\DomainUtils\BaseDAL\BaseDALInterface;
 

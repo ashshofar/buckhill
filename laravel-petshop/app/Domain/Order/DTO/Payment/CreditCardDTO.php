@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Domain\Order\DTO;
+namespace App\Domain\Order\DTO\Payment;
 
 use Spatie\LaravelData\Attributes\MapName;
 use Spatie\LaravelData\Data;

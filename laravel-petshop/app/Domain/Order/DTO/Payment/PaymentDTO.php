@@ -1,10 +1,11 @@
 <?php
 
-namespace App\Domain\Order\DTO;
+namespace App\Domain\Order\DTO\Payment;
 
 use App\Domain\Order\Models\Payment;
+use Dflydev\DotAccessData\Data;
 
-class PaymentDTO
+class PaymentDTO extends Data
 {
     public string $type;
     public object $details;
