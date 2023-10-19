@@ -14,6 +14,7 @@
         "lcobucci/jwt": "*",
         "spatie/laravel-data": "^3.9",
         "spatie/laravel-sluggable": "^3.5",
+        "staudenmeir/eloquent-json-relations": "^1.1",
         "symfony/serializer": "^6.3"
     },
     "require-dev": {

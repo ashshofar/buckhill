@@ -38,7 +38,7 @@ class ProductDAL extends BaseDAL implements ProductDALInterface
         $desc = request('desc');
         $sortBy = 'title';
 
-        if (in_array(request('sortBy'), Product::sortField)) {
+        if (in_array(request('sortBy'), Product::SORT_FIELD)) {
             $sortBy = request('sortBy');
         }
 
@@ -46,7 +46,7 @@ class ProductDAL extends BaseDAL implements ProductDALInterface
         $title = request('title');
         $price = request('price');
 
-        $product = $this->model->query()->with('category');
+        $product = $this->model->query()->with(['category', 'brand']);
 
         $product->when(!is_null($category), function ($q) use ($category) {
            return $q->whereHas('category', function ($cq) use ($category) {

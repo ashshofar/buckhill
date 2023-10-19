@@ -6,12 +6,15 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Support\Str;
+use Staudenmeir\EloquentJsonRelations\HasJsonRelationships;
 
 class Product extends Model
 {
     use HasFactory;
+    use HasJsonRelationships;
 
-    const sortField = [
+
+    const SORT_FIELD = [
       'title',
       'price',
       'description'
@@ -25,6 +28,10 @@ class Product extends Model
         'metadata',
     ];
 
+    protected $casts = [
+        'metadata' => 'json'
+    ];
+
     protected static function boot()
     {
         parent::boot();
@@ -35,17 +42,6 @@ class Product extends Model
     }
 
     /**
-     * Decode metadata column
-     *
-     * @param $value
-     * @return mixed
-     */
-    public function getMetadataAttribute($value): mixed
-    {
-        return json_decode($value);
-    }
-
-    /**
      * Category relations
      *
      * @return BelongsTo
@@ -53,6 +49,11 @@ class Product extends Model
     public function category(): BelongsTo
     {
         return $this->belongsTo(Category::class, 'category_uuid', 'uuid');
+    }
+
+    public function brand(): BelongsTo
+    {
+        return $this->belongsTo(Brand::class, 'metadata->brand', 'uuid');
     }
 
 }
