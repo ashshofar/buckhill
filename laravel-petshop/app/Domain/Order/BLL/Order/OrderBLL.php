@@ -8,6 +8,7 @@ use App\Domain\Order\DAL\Payment\PaymentDALInterface;
 use App\Domain\Order\DTO\Order\OrderDTO;
 use App\Domain\Order\Models\Order;
 use App\Domain\Product\DAL\Product\ProductDALInterface;
+use App\Domain\User\BLL\Auth\AuthBLLInterface;
 use App\Domain\User\DAL\User\UserDALInterface;
 use App\DomainUtils\BaseBLL\BaseBLL;
 use App\DomainUtils\BaseBLL\BaseBLLFileUtils;
@@ -20,6 +21,7 @@ class OrderBLL extends BaseBLL implements OrderBLLInterface
     use BaseBLLFileUtils;
 
     public function __construct(
+        public AuthBLLInterface $authBLL,
         public OrderDALInterface $orderDAL,
         public OrderStatusDALInterface $orderStatusDAL,
         public UserDALInterface $userDAL,
@@ -35,9 +37,11 @@ class OrderBLL extends BaseBLL implements OrderBLLInterface
      */
     public function createOrder(OrderDTO $order): Order
     {
+        $userId = $this->authBLL->getUserIdFromToken(request()->bearerToken());
         $amount = $this->calculateAmount($order->products);
+        
         $orderToSave = [
-            'user_id' => $this->userDAL->findUserByUuid('f4984c96-283f-4cfc-a961-4b2489c59a35')->id,
+            'user_id' => $userId,
             'order_status_id' => $this->orderStatusDAL->findOrderStatusByUuid($order->orderStatusUuid)->id,
             'payment_id' => $this->paymentDAL->findPaymentByUuid($order->paymentUuid)->id,
             'products' => json_encode($order->products),

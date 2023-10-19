@@ -51,4 +51,12 @@ interface AuthBLLInterface extends BaseBLLInterface
      * @return mixed
      */
     public function getUserUuid($bearerToken): mixed;
+
+    /**
+     * Get user id from token
+     *
+     * @param $bearerToken
+     * @return mixed
+     */
+    public function getUserIdFromToken($bearerToken): mixed;
 }

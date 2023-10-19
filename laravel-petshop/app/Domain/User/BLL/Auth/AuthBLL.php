@@ -114,4 +114,16 @@ class AuthBLL extends BaseBLL implements AuthBLLInterface
         $token = $this->parsingToken($bearerToken);
         return $token->claims()->get('user_uuid');
     }
+
+    /**
+     * Get user id from token
+     *
+     * @param $bearerToken
+     * @return mixed
+     */
+    public function getUserIdFromToken($bearerToken): mixed
+    {
+        $uuid = $this->getUserUuid($bearerToken);
+        return $this->DAL->findUserByUuid($uuid)->id;
+    }
 }
