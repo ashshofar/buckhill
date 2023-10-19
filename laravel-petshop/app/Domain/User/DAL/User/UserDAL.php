@@ -25,4 +25,5 @@ class UserDAL extends BaseDAL implements UserDALInterface
     {
         return $this->model->where('uuid', $uuid)->firstOrFail();
     }
+
 }

@@ -46,12 +46,12 @@ class OrderBLL extends BaseBLL implements OrderBLLInterface
      * @param OrderDTO $order
      * @return Order
      */
-    public function createOrder(OrderDTO $order): Order
+    public function createOrder(OrderDTO $order, $userId = null): Order
     {
         $amount = $this->calculateAmount($order->products);
 
         $orderToSave = [
-            'user_id' => $this->authBLL->getUserIdFromToken(),
+            'user_id' => is_null($userId) ? $this->authBLL->getUserIdFromToken() : $userId,
             'order_status_id' => $this->orderStatusDAL->findOrderStatusByUuid($order->orderStatusUuid)->id,
             'payment_id' => $this->paymentDAL->findPaymentByUuid($order->paymentUuid)->id,
             'products' => json_encode($order->products),

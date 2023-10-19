@@ -22,5 +22,5 @@ interface OrderBLLInterface extends BaseBLLInterface
      * @param OrderDTO $order
      * @return Order
      */
-    public function createOrder(OrderDTO $order): Order;
+    public function createOrder(OrderDTO $order, $userId = null): Order;
 }

@@ -11,7 +11,6 @@ use Spatie\LaravelData\Optional;
 class OrderDTO extends Data
 {
     public function __construct(
-//        public string|Optional $userUuid,
         public string $orderStatusUuid,
         public string $paymentUuid,
         public AddressOrderDTO $address,
