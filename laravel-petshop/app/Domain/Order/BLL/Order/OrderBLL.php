@@ -12,6 +12,7 @@ use App\Domain\User\BLL\Auth\AuthBLLInterface;
 use App\Domain\User\DAL\User\UserDALInterface;
 use App\DomainUtils\BaseBLL\BaseBLL;
 use App\DomainUtils\BaseBLL\BaseBLLFileUtils;
+use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 
 /**
  * @property OrderDALInterface DAL
@@ -28,6 +29,16 @@ class OrderBLL extends BaseBLL implements OrderBLLInterface
         public PaymentDALInterface $paymentDAL,
         public ProductDALInterface $productDAL
     ) {}
+
+    /**
+     * Get order list by user id
+     *
+     * @return LengthAwarePaginator
+     */
+    public function getListOrders(): LengthAwarePaginator
+    {
+        return $this->orderDAL->getListOrder($this->authBLL->getUserIdFromToken());
+    }
 
     /**
      * Create order
