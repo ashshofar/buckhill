@@ -20,7 +20,16 @@ interface OrderBLLInterface extends BaseBLLInterface
      * Create order
      *
      * @param OrderDTO $order
+     * @param null $userId
      * @return Order
      */
     public function createOrder(OrderDTO $order, $userId = null): Order;
+
+    /**
+     * Find order by uuid
+     *
+     * @param string $uuid
+     * @return mixed
+     */
+    public function findOrderByUuid(string $uuid): mixed;
 }

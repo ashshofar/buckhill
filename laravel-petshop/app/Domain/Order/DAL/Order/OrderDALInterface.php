@@ -14,4 +14,12 @@ interface OrderDALInterface extends BaseDALInterface
      * @return LengthAwarePaginator
      */
     public function getListOrder(int $userId): LengthAwarePaginator;
+
+    /**
+     * Find order by uuid
+     *
+     * @param string $uuid
+     * @return mixed
+     */
+    public function findOrderByUuid(string $uuid): mixed;
 }

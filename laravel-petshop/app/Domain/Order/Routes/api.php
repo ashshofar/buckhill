@@ -1,6 +1,7 @@
 <?php
 
 use App\Domain\Order\Controllers\Order\OrderCreateController;
+use App\Domain\Order\Controllers\Order\OrderFindController;
 use App\Domain\Order\Controllers\Order\OrderListController;
 use App\Domain\Order\Controllers\Payment\PaymentCreateController;
 use Illuminate\Support\Facades\Route;
@@ -25,6 +26,7 @@ Route::prefix('v1')
 
         Route::prefix('order')->group(function () {
             Route::post('/create', OrderCreateController::class);
+            Route::get('/{uuid}', OrderFindController::class);
         });
 
         Route::get('/orders', OrderListController::class);

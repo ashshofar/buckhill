@@ -82,4 +82,15 @@ class OrderBLL extends BaseBLL implements OrderBLLInterface
 
         return $amount;
     }
+
+    /**
+     * Find order by uuid
+     *
+     * @param string $uuid
+     * @return mixed
+     */
+    public function findOrderByUuid(string $uuid): mixed
+    {
+        return $this->orderDAL->findOrderByUuid($uuid);
+    }
 }
