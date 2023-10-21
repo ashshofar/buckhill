@@ -5,6 +5,7 @@ use App\Domain\Order\Controllers\Order\OrderFindController;
 use App\Domain\Order\Controllers\Order\OrderListController;
 use App\Domain\Order\Controllers\OrderStatus\OrderStatusListController;
 use App\Domain\Order\Controllers\Payment\PaymentCreateController;
+use App\Domain\Order\Controllers\Payment\PaymentListController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,17 +24,20 @@ Route::prefix('v1')
         Route::prefix('payment')
             ->middleware('jwt.verify')
             ->group(function () {
-            Route::post('/create', PaymentCreateController::class);
+                Route::post('/create', PaymentCreateController::class);
         });
 
         Route::prefix('order')
             ->middleware('jwt.verify')
             ->group(function () {
-            Route::post('/create', OrderCreateController::class);
-            Route::get('/{uuid}', OrderFindController::class);
+                Route::post('/create', OrderCreateController::class);
+                Route::get('/{uuid}', OrderFindController::class);
         });
 
         Route::get('/orders', OrderListController::class)
+            ->middleware('jwt.verify');
+
+        Route::get('/payments', PaymentListController::class)
             ->middleware('jwt.verify');
 
         Route::get('/order-statuses', OrderStatusListController::class);

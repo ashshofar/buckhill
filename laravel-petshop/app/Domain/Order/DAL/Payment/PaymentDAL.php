@@ -5,6 +5,7 @@ namespace App\Domain\Order\DAL\Payment;
 use App\Domain\Order\DTO\Payment\PaymentDTO;
 use App\Domain\Order\Models\Payment;
 use App\DomainUtils\BaseDAL\BaseDAL;
+use Illuminate\Pagination\LengthAwarePaginator;
 
 /**
  * @property Payment model
@@ -14,6 +15,27 @@ class PaymentDAL extends BaseDAL implements PaymentDALInterface
     public function __construct(Payment $payment)
     {
         $this->model = $payment;
+    }
+
+    /**
+     * Get list payment
+     *
+     * @return LengthAwarePaginator
+     */
+    public function getListPayments(): LengthAwarePaginator
+    {
+        $limit = request('limit');
+        $desc = request('desc');
+
+        $payments = $this->model->query();
+
+        if ($desc) {
+            $payments->orderBy('created_at', 'DESC');
+        } else {
+            $payments->orderBy('created_at', 'ASC');
+        }
+
+        return $payments->paginate($limit);
     }
 
     /**
