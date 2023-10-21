@@ -15,7 +15,6 @@ use OpenApi\Annotations as OA;
  *     path="/api/v1/user/create",
  *     summary="Create User",
  *     tags={"User"},
- *     security={{ "bearerAuth": {} }},
  *     @OA\RequestBody(
  *          @OA\MediaType(
  *              mediaType="application/json",
