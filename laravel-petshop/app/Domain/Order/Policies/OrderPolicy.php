@@ -2,59 +2,29 @@
 
 namespace App\Domain\Order\Policies;
 
+use App\Domain\Order\Models\Order;
+use App\Domain\User\BLL\Auth\AuthBLLInterface;
+use App\Domain\User\Models\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class OrderPolicy
 {
     use HandlesAuthorization;
 
-    /**
-     * Determine whether the user can view any models.
-     *
-     * @return boolean
-     */
-    public function index()
-    {
-        return true;
-    }
+    public function __construct(public AuthBLLInterface $authBLL)
+    {}
 
     /**
      * Determine whether the user can view the model.
      *
      * @return boolean
      */
-    public function view()
+    public function viewOrder(?User $user, Order $order)
     {
-        return true;
-    }
+        if ($this->authBLL->getUserIdFromToken() !== $order->user_id) {
+            return false;
+        }
 
-    /**
-     * Determine whether the user can create models.
-     *
-     * @return boolean
-     */
-    public function create()
-    {
-         return true;
-    }
-
-    /**
-     * Determine whether the user can update the model.
-     *
-     * @return boolean
-     */
-    public function update()
-    {
-        return true;
-    }
-
-    /**
-     * Determine whether the user can delete the model.
-     *
-     * @return boolean
-     */
-    public function delete()
-    {
         return true;
     }
 }

@@ -4,6 +4,7 @@ namespace App\Exceptions;
 
 use App\Http\Responses\ApiErrorResponse;
 use Exception;
+use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Symfony\Component\HttpFoundation\Response;
@@ -53,6 +54,14 @@ class Handler extends ExceptionHandler
     public function render($request, Exception|Throwable $e)
     {
         $response = parent::render($request, $e);
+        if ($e instanceof AuthorizationException && $request->wantsJson()) {
+            return new ApiErrorResponse(
+                trans('auth.unauthorized'),
+                Response::HTTP_FORBIDDEN,
+                $e
+            );
+        }
+
         if ($e instanceof ModelNotFoundException && $request->wantsJson()) {
             return new ApiErrorResponse(
                 trans('messages.not_found'),

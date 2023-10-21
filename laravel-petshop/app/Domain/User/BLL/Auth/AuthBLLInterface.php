@@ -58,4 +58,11 @@ interface AuthBLLInterface extends BaseBLLInterface
      * @return mixed
      */
     public function getUserIdFromToken(): mixed;
+
+    /**
+     * Get user from token
+     *
+     * @return User|null
+     */
+    public function getUserFromToken(): ?User;
 }
