@@ -32,11 +32,11 @@ use Symfony\Component\HttpFoundation\Response;
  *              )
  *          )
  *     ),
- *     @OA\Response(response=200, description="OK"),
- *     @OA\Response(response=401, description="Unauthorized"),
- *     @OA\Response(response=422, description="Unprocessable Entity"),
- *     @OA\Response(response=404, description="Page not found"),
- *     @OA\Response(response=500, description="Internal server error")
+ *     @OA\Response(response=200, description="OK", @OA\JsonContent()),
+ *     @OA\Response(response=401, description="Unauthorized", @OA\JsonContent()),
+ *     @OA\Response(response=422, description="Unprocessable Entity", @OA\JsonContent()),
+ *     @OA\Response(response=404, description="Page not found", @OA\JsonContent()),
+ *     @OA\Response(response=500, description="Internal server error", @OA\JsonContent())
  * )
  */
 class AdminLoginController extends Controller
