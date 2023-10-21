@@ -4,6 +4,8 @@ namespace App\Domain\Order\Providers;
 
 use App\Domain\Order\BLL\Order\OrderBLL;
 use App\Domain\Order\BLL\Order\OrderBLLInterface;
+use App\Domain\Order\BLL\OrderStatus\OrderStatusBLL;
+use App\Domain\Order\BLL\OrderStatus\OrderStatusBLLInterface;
 use App\Domain\Order\BLL\Payment\PaymentBLL;
 use App\Domain\Order\BLL\Payment\PaymentBLLInterface;
 use App\Domain\Order\DAL\Order\OrderDAL;
@@ -31,6 +33,7 @@ class OrderProvider extends ServiceProvider
     public $bindings = [
         OrderBLLInterface::class => OrderBLL::class,
         OrderDALInterface::class => OrderDAL::class,
+        OrderStatusBLLInterface::class => OrderStatusBLL::class,
         OrderStatusDALInterface::class => OrderStatusDAL::class,
         PaymentBLLInterface::class => PaymentBLL::class,
         PaymentDALInterface::class => PaymentDAL::class

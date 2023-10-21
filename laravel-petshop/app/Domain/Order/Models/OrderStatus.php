@@ -8,6 +8,11 @@ use Illuminate\Support\Str;
 
 class OrderStatus extends Model
 {
+
+    const SORT_FIELD = [
+        'title'
+    ];
+
     protected $fillable = [
         'title'
     ];

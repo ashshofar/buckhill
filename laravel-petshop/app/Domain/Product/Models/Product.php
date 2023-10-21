@@ -13,7 +13,6 @@ class Product extends Model
     use HasFactory;
     use HasJsonRelationships;
 
-
     const SORT_FIELD = [
       'title',
       'price',
