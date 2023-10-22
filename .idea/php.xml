@@ -147,6 +147,10 @@
       <path value="$PROJECT_DIR$/laravel-petshop/vendor/spatie/laravel-data" />
       <path value="$PROJECT_DIR$/laravel-petshop/vendor/staudenmeir/eloquent-has-many-deep-contracts" />
       <path value="$PROJECT_DIR$/laravel-petshop/vendor/staudenmeir/eloquent-json-relations" />
+      <path value="$PROJECT_DIR$/laravel-petshop/vendor/swagger-api/swagger-ui" />
+      <path value="$PROJECT_DIR$/laravel-petshop/vendor/doctrine/annotations" />
+      <path value="$PROJECT_DIR$/laravel-petshop/vendor/darkaonline/l5-swagger" />
+      <path value="$PROJECT_DIR$/laravel-petshop/vendor/zircote/swagger-php" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="8.1" />

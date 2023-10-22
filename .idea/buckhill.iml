@@ -147,6 +147,10 @@
       <excludeFolder url="file://$MODULE_DIR$/laravel-petshop/vendor/spatie/laravel-data" />
       <excludeFolder url="file://$MODULE_DIR$/laravel-petshop/vendor/staudenmeir/eloquent-has-many-deep-contracts" />
       <excludeFolder url="file://$MODULE_DIR$/laravel-petshop/vendor/staudenmeir/eloquent-json-relations" />
+      <excludeFolder url="file://$MODULE_DIR$/laravel-petshop/vendor/swagger-api/swagger-ui" />
+      <excludeFolder url="file://$MODULE_DIR$/laravel-petshop/vendor/doctrine/annotations" />
+      <excludeFolder url="file://$MODULE_DIR$/laravel-petshop/vendor/darkaonline/l5-swagger" />
+      <excludeFolder url="file://$MODULE_DIR$/laravel-petshop/vendor/zircote/swagger-php" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
