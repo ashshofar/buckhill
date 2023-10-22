@@ -1,0 +1,3 @@
+CREATE DATABASE IF NOT EXISTS petshop_testing;
+GRANT ALL PRIVILEGES ON petshop_testing.* TO 'root'@'%';
+FLUSH PRIVILEGES;

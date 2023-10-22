@@ -31,7 +31,19 @@
 
 - [Swagger URL: http://localhost:9000/api/documentation](http://localhost:9000/api/documentation)
 
-
+## Demo
+- admin account
+```bash
+  email: admin@buckhil.co.uk
+  password: admin
+```
+- php myadmin
+```bash
+  url: http://localhost:9001/
+  server: mysql_db
+  username: root
+  password: root
+```
 ## Running Tests
 
 To run tests, run the following command
