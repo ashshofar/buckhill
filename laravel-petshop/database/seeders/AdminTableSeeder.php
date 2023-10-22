@@ -18,7 +18,6 @@ class AdminTableSeeder extends Seeder
         User::create([
             'email' =>  'admin@buckhill.co.uk',
             'password' => Hash::make('admin'),
-            'name' => 'admin',
             'first_name' => 'admin',
             'last_name' => 'admin',
             'is_admin' => true,
