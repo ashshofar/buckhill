@@ -23,7 +23,7 @@
 ```
 - Run migration and seeder
 ```bash
-  docker exec -it php artisan migrate --seed
+  docker exec -it laravel-petshop php artisan migrate --seed
 ```
 
 
@@ -34,7 +34,7 @@
 ## Demo
 - admin account
 ```bash
-  email: admin@buckhil.co.uk
+  email: admin@buckhill.co.uk
   password: admin
 ```
 - php myadmin
