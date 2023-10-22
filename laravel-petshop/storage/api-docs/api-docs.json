@@ -75,6 +75,100 @@
                 }
             }
         },
+        "/api/v1/order/create": {
+            "post": {
+                "tags": [
+                    "Order"
+                ],
+                "summary": "Create order",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "order_status_uuid": {
+                                        "type": "string",
+                                        "example": "6f00f183-c6a6-4e19-b5d2-c5b97965ec06"
+                                    },
+                                    "payment_uuid": {
+                                        "type": "string",
+                                        "example": "74de88df-cb61-4b0b-9c5f-e748faae4c21"
+                                    },
+                                    "products": {
+                                        "type": "object",
+                                        "example": [
+                                            {
+                                                "uuid": "d8d7280a-0591-4d0b-975e-d6be427db232",
+                                                "quantity": 1
+                                            },
+                                            {
+                                                "uuid": "9301291e-8c77-4c18-a064-0c0cb34e1ebb",
+                                                "quantity": 1
+                                            }
+                                        ]
+                                    },
+                                    "address": {
+                                        "type": "object",
+                                        "example": {
+                                            "billing": "billing",
+                                            "shipping": "shipping"
+                                        }
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Unprocessable Entity",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Page not found",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Internal server error",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
         "/api/v1/order/{uuid}": {
             "get": {
                 "tags": [

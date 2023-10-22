@@ -28,7 +28,7 @@ class OrderCreateRequest extends FormRequest
             'payment_uuid' => ['required', 'string', 'exists:payments,uuid'],
             'products' => ['required', 'array'],
             'products.*.uuid' => ['required_with:products', 'string', 'exists:products,uuid'],
-            'products.*.quantity' => ['required_with:products', 'integer'],
+            'products.*.quantity' => ['required_with:products', 'integer', 'min:1'],
             'address' => ['required', 'array'],
             'address.billing' => ['required_with:address', 'string'],
             'address.shipping' => ['required_with:address', 'string']
