@@ -11,7 +11,7 @@
 ``` 
 - Go to laravel-petshop foler
 ```bash
-  cd larave-petshop
+  cd laravel-petshop
 ``` 
 - Copy .env file
 ```bash
@@ -37,7 +37,7 @@
   email: admin@buckhill.co.uk
   password: admin
 ```
-- php myadmin
+- phpmyadmin
 ```bash
   url: http://localhost:9001/
   server: mysql_db
