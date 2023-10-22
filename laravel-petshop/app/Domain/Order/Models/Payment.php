@@ -2,12 +2,15 @@
 
 namespace App\Domain\Order\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Support\Str;
 
 class Payment extends Model
 {
+    use HasFactory;
+
     const CREDIT_CARD = 'credit_card';
     const CASH_ON_DELIVERY = 'cash_on_delivery';
     const BANK_TRANSFER = 'bank_transfer';

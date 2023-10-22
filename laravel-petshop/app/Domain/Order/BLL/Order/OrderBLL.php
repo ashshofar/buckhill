@@ -44,6 +44,7 @@ class OrderBLL extends BaseBLL implements OrderBLLInterface
      * Create order
      *
      * @param OrderDTO $order
+     * @param null $userId
      * @return Order
      */
     public function createOrder(OrderDTO $order, $userId = null): Order
