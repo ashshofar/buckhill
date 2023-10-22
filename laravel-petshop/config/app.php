@@ -1,5 +1,6 @@
 <?php
 
+use Ashshofar\Exchange\Providers\ExchangeProvider;
 use Illuminate\Support\Facades\Facade;
 
 return [
@@ -181,6 +182,7 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
+        ExchangeProvider::class,
 
         /*
          * Package Service Providers...

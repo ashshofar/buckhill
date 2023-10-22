@@ -1,0 +1,13 @@
+{
+    "name": "ashshofar/exchange",
+    "description": "Currency exchange rate",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "Ashshofar\\Exchange\\": "src/"
+        }
+    },
+    "require": {
+        "guzzlehttp/guzzle": "^7.0.1"
+    }
+}
