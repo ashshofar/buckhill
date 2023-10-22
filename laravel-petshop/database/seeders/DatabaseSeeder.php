@@ -18,8 +18,10 @@ class DatabaseSeeder extends Seeder
             CategoryTableSeeder::class,
             BrandTableSeeder::class,
             FileTableSeeder::class,
-
-            OrderStatusTableSeeder::class
+            ProductTableSeeder::class,
+            PaymentTableSeeder::class,
+            OrderStatusTableSeeder::class,
+            OrderTableSeeder::class
         ]);
     }
 }

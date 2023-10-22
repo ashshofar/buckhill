@@ -46,7 +46,7 @@ class ProductDAL extends BaseDAL implements ProductDALInterface
         $title = request('title');
         $price = request('price');
 
-        $product = $this->model->query()->with(['category', 'brand']);
+        $product = $this->model->query()->with(['category', 'brand', 'file']);
 
         $product->when(!is_null($category), function ($q) use ($category) {
            return $q->whereHas('category', function ($cq) use ($category) {

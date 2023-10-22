@@ -2,6 +2,7 @@
 
 use App\Domain\User\Controllers\Admin\AdminCreateController;
 use App\Domain\User\Controllers\Auth\AdminLoginController;
+use App\Domain\User\Controllers\Auth\UserLoginController;
 use App\Domain\User\Controllers\User\UserCreateController;
 use Illuminate\Support\Facades\Route;
 
@@ -23,12 +24,7 @@ Route::prefix('v1')->group(function () {
     });
 
     Route::prefix('user')->group(function () {
+        Route::post('/login', UserLoginController::class);
         Route::post('/create', UserCreateController::class);
-    });
-});
-
-Route::group(['middleware' => ['jwt.verify']], function () {
-    Route::get('/test', function () {
-        return 'test';
     });
 });

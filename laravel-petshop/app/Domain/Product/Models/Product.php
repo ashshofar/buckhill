@@ -2,6 +2,7 @@
 
 namespace App\Domain\Product\Models;
 
+use App\Domain\File\Models\File;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -53,6 +54,11 @@ class Product extends Model
     public function brand(): BelongsTo
     {
         return $this->belongsTo(Brand::class, 'metadata->brand', 'uuid');
+    }
+
+    public function file()
+    {
+        return $this->belongsTo(File::class, 'metadata->image', 'uuid');
     }
 
 }

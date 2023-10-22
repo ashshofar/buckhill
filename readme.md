@@ -37,6 +37,11 @@
   email: admin@buckhill.co.uk
   password: admin
 ```
+- User account (seeder)
+```bash
+  email: user email from table user
+  password: password
+```
 - phpmyadmin
 ```bash
   url: http://localhost:9001/

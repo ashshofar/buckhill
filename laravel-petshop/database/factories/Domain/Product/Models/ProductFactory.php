@@ -6,6 +6,7 @@ use App\Domain\File\Models\File;
 use App\Domain\Product\Models\Brand;
 use App\Domain\Product\Models\Category;
 use App\Domain\Product\Models\Product;
+use App\Domain\Product\DTO\MetadataDTO;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -32,7 +33,7 @@ class ProductFactory extends Factory
             'title' => fake()->word,
             'price' => fake()->numberBetween(100, 500),
             'description' => fake()->text,
-            'metadata' => json_encode([
+            'metadata' => MetadataDTO::from([
                 'brand' => $this->getBrands()->uuid,
                 'image' => $this->getFiles()->uuid
             ])
